@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class PaymentTransaction extends Model
 {
-    use SoftDeletes, HasFactory;
+    use HasFactory, SoftDeletes;
 
     protected $fillable = [
         'user_id',
@@ -16,5 +16,5 @@ class PaymentTransaction extends Model
         'amount',
         'status',
         'stripe_paymentid',
-];
+    ];
 }

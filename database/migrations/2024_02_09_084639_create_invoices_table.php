@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('code')->unique();
             $table->foreignId('user_id')->constrained();
             $table->string('stripe_invoice');
-            $table->enum('status',['sent','paid', 'unpaid'])->default('sent');
+            $table->enum('status', ['sent', 'paid', 'unpaid'])->default('sent');
             $table->softDeletes();
             $table->timestamps();
         });

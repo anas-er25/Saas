@@ -16,10 +16,9 @@ class MembershipFactory extends Factory
      *
      * @return array<string, mixed>
      */
-    
-     protected $model = Membership::class;
-    
-     public function definition(): array
+    protected $model = Membership::class;
+
+    public function definition(): array
     {
 
         return [

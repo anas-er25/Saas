@@ -7,34 +7,45 @@ use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
-    public function index(){
+    public function index()
+    {
         $this->authorize('viewAny', Post::class);
+
         return Post::all();
     }
 
-    public function store(Request $request){
+    public function store(Request $request)
+    {
         $this->authorize('create', Post::class);
+
         return Post::create($request->validated());
     }
 
-    public function show(Post $post){
+    public function show(Post $post)
+    {
         $this->authorize('view', $post);
+
         return $post;
     }
 
-    public function update(Request $request, Post $post){
+    public function update(Request $request, Post $post)
+    {
         $this->authorize('update', $post);
         $post->update($request->validated());
+
         return $post;
     }
 
-    public function destroy(Post $post){
+    public function destroy(Post $post)
+    {
         $this->authorize('delete', $post);
         $post->delete();
     }
 
-    public function search(Request $request){
+    public function search(Request $request)
+    {
         $this->authorize('viewAny', Post::class);
+
         return Post::search($request->get('q'))->get();
     }
 }

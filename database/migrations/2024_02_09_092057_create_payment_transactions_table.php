@@ -17,7 +17,7 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained();
             $table->foreignId('order_id')->constrained();
             $table->float('amount');
-            $table->enum('status',['pending','success','failed']);
+            $table->enum('status', ['pending', 'success', 'failed']);
             $table->string('stripe_paymentid');
             $table->softDeletes();
             $table->timestamps();

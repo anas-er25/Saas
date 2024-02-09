@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('products', function (Blueprint $table) {
-            $table->engine='InnoDB';
+            $table->engine = 'InnoDB';
             $table->id();
             $table->foreignIdFor('product_catalog_id')->constrained();
             $table->string('code')->unique();

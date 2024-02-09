@@ -8,13 +8,12 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class TicketReply extends Model
 {
-    use SoftDeletes, HasFactory;
+    use HasFactory, SoftDeletes;
 
     protected $fillable = [
         'code',
         'ticket_id',
         'user_id',
-        'message'
+        'message',
     ];
-
 }

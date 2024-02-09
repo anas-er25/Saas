@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Product extends Model
 {
-    use SoftDeletes, HasFactory;
+    use HasFactory, SoftDeletes;
 
     protected $fillable = [
         'product_catalog_id',
@@ -17,10 +17,10 @@ class Product extends Model
         'description',
         'price',
         'images',
-        'demo'
+        'demo',
     ];
 
-    protected $casts=[
-        'images' => 'array'
+    protected $casts = [
+        'images' => 'array',
     ];
 }
